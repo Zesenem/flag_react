@@ -1,0 +1,182 @@
+/* -------------------------
+   Variables & Base Styles
+   ------------------------- */
+:root {
+  --color-primary: #00796b;
+  --color-primary-dark: #004d40;
+  --color-secondary: #0288d1;
+  --color-secondary-dark: #0277bd;
+  --color-danger: #e53935;
+  --color-danger-dark: #d32f2f;
+  --bg-body: #f9f9f9;
+  --bg-filter: #e0f7f1;
+  --bg-card: #fff;
+  --bg-input: #f5f5f5;
+  --border-light: #ccc;
+  --border-soft: #bbb;
+  --radius-sm: 4px;
+  --radius: 6px;
+  --radius-lg: 10px;
+  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-strong: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Oswald", "Futura", sans-serif;
+  background: var(--bg-body);
+  padding: 20px;
+  min-height: 100vh;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* -------------------------
+     Grid & Cards
+     ------------------------- */
+#grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.card {
+  padding: 15px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-medium);
+  text-align: center;
+  position: relative;
+}
+
+.book-image {
+  display: block;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+.book-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.book-author {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #333;
+  margin-top: 5px;
+}
+
+.read-status {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: bold;
+  border-radius: var(--radius-sm);
+}
+
+.card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.btn.edit {
+  border: none;
+  border-radius: var(--radius);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+
+  background: var(--color-secondary);
+  color: #fff;
+  padding: 2px 8px;
+}
+
+.btn.edit:hover {
+  background: var(--color-secondary-dark);
+  transform: translateY(-1px);
+}
+
+.btn.edit:active {
+  transform: translateY(0);
+}
+
+.btn.delete {
+  border: none;
+  border-radius: var(--radius);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+
+  background: var(--color-danger);
+  color: #fff;
+  padding: 2px 8px;
+}
+
+.btn.delete:hover {
+  background: var(--color-danger-dark);
+  transform: translateY(-1px);
+}
+
+.btn.delete:active {
+  transform: translateY(0);
+}
+
+/* Button container spacing */
+.form-container .card-actions {
+  display: flex;
+  justify-content: flex-end;            
+  margin-top: 16px;
+}
+
+.form-container button {
+  padding: 15px 24px;
+  font-size: 1em;
+  box-shadow: var(--shadow-light);
+  border: none;                 
+  border-radius: var(--radius); 
+  color: #fff;                  
+  cursor: pointer;
+  transition: filter 0.2s ease, transform 0.1s ease;
+}
+
+.form-container button[type="submit"] {
+  background: var(--color-secondary);
+}
+
+.form-container button[type="button"] {
+  background: var(--color-danger);
+}
+
+.form-container button:hover {
+  filter: brightness(1.1);
+}
+
+.form-container button:active {
+  transform: translateY(1px);
+}
+
+.form-container {
+  background: var(--color-primary);
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-strong);
+  margin-bottom: 24px;
+}
